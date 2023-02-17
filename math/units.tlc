@@ -11,9 +11,10 @@ let expr: String = match argv {
 
 match expr {
    f"{x}+{y}" => {
-      print("TODO: plus")
+      print("TODO: plus");
    },
    t => {
-      print(f"Error, invalid expression: {t}")
+      eprint(f"Error, invalid expression: {t}");
+      exit(1);
    },
 };
