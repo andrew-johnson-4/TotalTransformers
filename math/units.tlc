@@ -1,6 +1,6 @@
 import $"preludes/l1.tlc";
 
-let expr: String = match args {
+let expr: String = match argv {
    ("eval", expr) => expr,
    _ => {
       print("help");
