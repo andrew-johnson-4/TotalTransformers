@@ -1,0 +1,19 @@
+import $"preludes/l1.tlc";
+
+let expr: String = match args {
+   ("eval", expr) => expr,
+   _ => {
+      print("help");
+      print("\teval [expr]");
+      exit(0); ""
+   },
+};
+
+match expr {
+   f"{x}+{y}" => {
+      print("TODO: plus")
+   },
+   t => {
+      print(f"Error, invalid expression: {t}")
+   },
+};
