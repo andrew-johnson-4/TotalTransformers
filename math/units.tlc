@@ -23,5 +23,5 @@ let eval(s: String) {
 };
 
 //This code does not work yet on latest LSTS
-//Several minor features are need for this to work
+//Several minor features are needed for this to work
 //The only major feature needed here is CFG substructural pattern matching
