@@ -13,6 +13,9 @@ let eval(s: String) {
    match expr {
       f"{x}+{y}" => { x + y },
       f"{x}-{y}" => { x - y },
+      f"{x}*{y}" => { x * y },
+      f"{x}/{y}" => { x / y },
+      f"{x}%{y}" => { x % y },
       t => {
          eprint(f"Error, invalid expression: {t}");
          exit(1); 0
