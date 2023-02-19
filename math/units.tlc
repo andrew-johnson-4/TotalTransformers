@@ -1,5 +1,9 @@
 import $"preludes/l1.tlc";
 
+//These are called literal types.
+//They indicate not only how a type is to be represented as structured data
+//but also they indicate how a type can be stored as a literal value.
+//The idea is similar to the derive macros of Rust, just being more explicit.
 type ArithAtom = /^[-]?[0-9]+$/;
                | f"({x:ArithAdd})";
 type MulOp     = /^[*/%]$/;
