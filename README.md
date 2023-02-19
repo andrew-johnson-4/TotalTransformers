@@ -7,5 +7,6 @@
 - Arithmetic
   - [SI Unit Conversion](https://github.com/andrew-johnson-4/TotalTransformers/blob/main/math/units.tlc)
 - Logic
+  - [Type-Level Sudoku Solver](https://github.com/andrew-johnson-4/TotalTransformers/blob/main/logic/sudoku.tlc)
 - Formatted Data
 - Belief Formation
