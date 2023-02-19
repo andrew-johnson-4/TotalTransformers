@@ -18,7 +18,7 @@ let eval(s: String): Integer {
       f"{x:ArithAtom}/{y:ArithMul}" => { x / y },
       f"{x:ArithAtom}%{y:ArithMul}" => { x % y },
       f"{x:ArithAtom}" => { x },
-      _ => {
+      t => {
          eprint(f"Error, invalid expression: {t}");
          exit(1); 0
       },
