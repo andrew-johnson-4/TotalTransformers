@@ -19,6 +19,8 @@ let expr: String = match argv() {
 };
 
 let eval(s: String): Integer {
+   //The "as" conversion here actually does the heavy lifting of parsing
+   //This syntax is just sugar for the function call `$"as"(expr):ArithAdd`
    match expr as ArithAdd {
       f"{x:ArithMul}+{y:ArithAdd}" => { x + y },
       f"{x:ArithMul}-{y:ArithAdd}" => { x - y },
