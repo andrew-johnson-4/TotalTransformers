@@ -1,5 +1,9 @@
 import $"preludes/l1.tlc";
 
+type ArithAtom = /^[-]?[0-9]+$/;
+type ArithMul = f"{ArithAtom}\[*/%]{ArithMul}";
+type ArithAdd = f"{ArithMul}\[+-]{ArithAdd}";
+
 let expr: String = match argv() {
    ("eval", expr) => eval(expr),
    _ => {
