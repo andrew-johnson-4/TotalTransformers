@@ -9,14 +9,16 @@ let expr: String = match argv() {
    },
 };
 
-let eval(s: String) {
+let eval(s: String): Integer {
    match expr {
-      f"{x}+{y}" => { x + y },
-      f"{x}-{y}" => { x - y },
-      f"{x}*{y}" => { x * y },
-      f"{x}/{y}" => { x / y },
-      f"{x}%{y}" => { x % y },
-      t => {
+      f"({x:ArithAdd})" => { x },
+      f"{x:ArithMul}+{y:ArithAdd}" => { x + y },
+      f"{x:ArithMul}-{y:ArithAdd}" => { x - y },
+      f"{x:ArithAtom}*{y:ArithMul}" => { x * y },
+      f"{x:ArithAtom}/{y:ArithMul}" => { x / y },
+      f"{x:ArithAtom}%{y:ArithMul}" => { x % y },
+      f"{x:ArithAtom}" => { x },
+      _ => {
          eprint(f"Error, invalid expression: {t}");
          exit(1); 0
       },
