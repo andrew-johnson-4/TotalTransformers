@@ -1,8 +1,13 @@
 import $"preludes/l1.tlc";
 
 type ArithAtom = /^[-]?[0-9]+$/;
-type ArithMul = f"{ArithAtom}\[*/%]{ArithMul}";
-type ArithAdd = f"{ArithMul}\[+-]{ArithAdd}";
+               | f"({x:ArithAdd})";
+type MulOp     = /^[*/%]$/;
+type AddOp     = /^[+-]$/;
+type ArithMul = f"{x:ArithAtom}{op:MulOp}{y:ArithMul}"
+              | f"{x:ArithAtom}";
+type ArithAdd = f"{x:ArithMul}{op:AddOp}{y:ArithAdd}"
+              | f"{x:ArithMul}";
 
 let expr: String = match argv() {
    ("eval", expr) => eval(expr),
@@ -14,18 +19,14 @@ let expr: String = match argv() {
 };
 
 let eval(s: String): Integer {
-   match expr {
-      f"({x:ArithAdd})" => { x },
+   match expr as ArithAdd {
       f"{x:ArithMul}+{y:ArithAdd}" => { x + y },
       f"{x:ArithMul}-{y:ArithAdd}" => { x - y },
       f"{x:ArithAtom}*{y:ArithMul}" => { x * y },
       f"{x:ArithAtom}/{y:ArithMul}" => { x / y },
       f"{x:ArithAtom}%{y:ArithMul}" => { x % y },
-      f"{x:ArithAtom}" => { x },
-      t => {
-         eprint(f"Error, invalid expression: {t}");
-         exit(1); 0
-      },
+      f"({x:ArithAdd})" => { x },
+      f"\/^[-]?[0-9]+$/" as x => { x as Integer },
    }
 };
 
