@@ -26,7 +26,7 @@ let eval(s: String): Integer {
       f"{x:ArithAtom}/{y:ArithMul}" => { x / y },
       f"{x:ArithAtom}%{y:ArithMul}" => { x % y },
       f"({x:ArithAdd})" => { x },
-      f"\/^[-]?[0-9]+$/" as x => { x as Integer },
+      /^[-]?[0-9]+$/ as x => { x as Integer },
    }
 };
 
