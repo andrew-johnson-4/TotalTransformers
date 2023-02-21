@@ -1,7 +1,7 @@
 import $"preludes/l1.tlc";
 
 //This sudoku is solved by the type system, before even running any code
-let solve(puzzle: (
+let puzzle: Sudoku = (
    (_,_,_, _,_,_, 9,_,5),
    (3,_,5, 8,9,6, _,_,7),
    (9,7,_, _,_,_, _,3,8),
@@ -13,6 +13,6 @@ let solve(puzzle: (
    (_,5,7, _,_,_, _,3,2),
    (8,_,_, 3,7,2, 1,_,4),
    (4,_,2, _,_,_, _,_,_)
-)) {
-   print(puzzle as Solution)
-};
+);
+
+print(puzzle as Solution);
