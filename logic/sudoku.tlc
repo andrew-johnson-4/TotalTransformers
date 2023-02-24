@@ -1,5 +1,8 @@
 import $"preludes/l1.tlc";
 
+type SDigit  = /^[1-9]$/;
+type Sudoku = SDigit?[9][9];
+
 //This sudoku is solved by the type system, before even running any code
 let puzzle: Sudoku = (
    (_,_,_, _,_,_, 9,_,5),
