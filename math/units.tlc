@@ -39,3 +39,5 @@ let eval(s: String): Integer {
 //This code does not work yet on latest LSTS
 //Several minor features are needed for this to work
 //The only major feature needed here is CFG substructural pattern matching
+
+//Not included here is SI Unit Conversion, which would also require another feature called "types as terms"
